@@ -2,17 +2,17 @@ import type { Metadata } from "next";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-	title: "Valio Con 2025",
+	title: "दीपस्तंभ पुरस्कार सोहळा २०२५ | मराठा समाज प्रतिष्ठान",
 	description:
-		"A creative tech conference. September 11th-14th in Oceanside, California.",
+		"मराठा समाज प्रतिष्ठान, छत्रपती संभाजीनगर यांचा दीपस्तंभ पुरस्कार सोहळा २०२५. १५ नोव्हेंबर २०२५ रोजी एम. आय. टी. प्रांगण, छत्रपती संभाजीनगर येथे.",
 	openGraph: {
-		title: "Valio Con 2025",
+		title: "दीपस्तंभ पुरस्कार सोहळा २०२५",
 		description:
-			"A creative tech conference. September 11th-14th in Oceanside, California.",
-		url: "https://valiocon.com",
+			"मराठा समाज प्रतिष्ठान, छत्रपती संभाजीनगर यांचा दीपस्तंभ पुरस्कार सोहळा २०२५. १५ नोव्हेंबर २०२५ रोजी एम. आय. टी. प्रांगण, छत्रपती संभाजीनगर येथे.",
+		url: "https://deepstambh.com",
 		images: [
 			{
-				url: "https://valiocon.com/images/vcon-share-2025.jpg",
+				url: "/images/logo.png",
 			},
 		],
 	},
@@ -20,9 +20,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
-		<html lang="en" suppressHydrationWarning>
+		<html lang="mr" suppressHydrationWarning>
 			<head>
-				<link href="/css/2025.css%3F10.css" rel="stylesheet" />
+				<link href="/css/2025.css" rel="stylesheet" />
 				<link rel="icon" href="/images/favicon.ico" />
 				<Script
 					id="ml-universal"
@@ -56,7 +56,7 @@ gtag('js', new Date());
 gtag('config', 'G-HJNFY48BLB');
 `}
 				</Script>
-				<Script src="/js/index.js%3F4" strategy="afterInteractive" />
+				<Script src="/js/index.js" strategy="afterInteractive" />
 			</head>
 			<body>{children}</body>
 		</html>
