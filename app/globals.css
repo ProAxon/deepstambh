@@ -7040,8 +7040,16 @@ footer {
 }
 
 .cta-section {
+  padding: 15vh 5%;
+  max-width: 800px;
+  margin: 0 auto;
   text-align: center;
-  padding: 3rem 0
+}
+
+.cta-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .cta-buttons {
@@ -7635,7 +7643,7 @@ footer {
 
 /* AARTI Section Styling */
 .aarti-section {
-  padding: 20vh 5%;
+  padding: vh 5%;
   position: relative;
 }
 
@@ -7681,7 +7689,7 @@ footer {
 
 @media (max-width: 768px) {
   .aarti-section {
-    padding: 10vh 5%;
+    padding: 0vh 5%;
   }
   
   .aarti-content .venue-headline {

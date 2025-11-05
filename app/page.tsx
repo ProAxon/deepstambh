@@ -50,7 +50,6 @@ const faqs = [
 ]
 
 export default function Home() {
-  const [email, setEmail] = useState('')
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null)
   const [showVideoModal, setShowVideoModal] = useState(false)
   const aboutSectionRef = useRef<HTMLElement>(null)
@@ -200,13 +199,6 @@ export default function Home() {
     setOpenFaqIndex(openFaqIndex === index ? null : index)
   }
 
-  const handleEmailSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle email submission here
-    console.log('Email submitted:', email)
-    setEmail('')
-  }
-
   return (
     <div style={{ background: '#fff', minHeight: '100vh' }}>
       <Nav />
@@ -354,7 +346,7 @@ export default function Home() {
               ref={(el) => { venueImageCardsRef.current[0] = el }}
             >
               <Image
-                src="/aarti-lab.jpg"
+                src="/aarti-1.png"
                 alt="AARTI प्रशिक्षण प्रयोगशाळा"
                 fill
                 style={{ objectFit: 'cover' }}
@@ -367,7 +359,7 @@ export default function Home() {
               ref={(el) => { venueImageCardsRef.current[1] = el }}
             >
               <Image
-                src="/aarti-campus.jpg"
+                src="/aarti-2.png"
                 alt="AARTI कॅम्पसचे दृश्य"
                 fill
                 style={{ objectFit: 'cover' }}
@@ -380,7 +372,7 @@ export default function Home() {
               ref={(el) => { venueImageCardsRef.current[2] = el }}
             >
               <Image
-                src="/aarti-training.jpg"
+                src="/aarti-3.png"
                 alt="प्रशिक्षण सत्रातील विद्यार्थी"
                 fill
                 style={{ objectFit: 'cover' }}
@@ -393,7 +385,7 @@ export default function Home() {
               ref={(el) => { venueImageCardsRef.current[3] = el }}
             >
               <Image
-                src="/aarti-community.jpg"
+                src="/aarti-4.png"
                 alt="AARTI समाजातील सहभाग कार्यक्रम"
                 fill
                 style={{ objectFit: 'cover' }}
@@ -405,64 +397,36 @@ export default function Home() {
 
 
 
-      <section className="testimonials-section">
-        <div className="testimonials-header">
-          <h2 className="headline">समाजातील प्रतिक्रिया</h2>
-          <p className="caption">पुरस्कार विजेत्यांकडून प्राप्त झालेल्या प्रतिक्रिया. आपले अनुभव सामायिक करा.</p>
-        </div>
-        <div className="testimonials-grid">
-          {testimonials.map((testimonial) => (
-            <div key={testimonial.name} className="testimonial-card">
-              <div className="testimonial-header">
-                <Image
-                  src={testimonial.avatar}
-                  alt={testimonial.name}
-                  width={48}
-                  height={48}
-                  className="testimonial-avatar"
-                />
-                <div className="testimonial-meta">
-                  <span className="testimonial-name">{testimonial.name}</span>
-                  <span className="testimonial-handle">{testimonial.handle}</span>
-                </div>
-              </div>
-              <p className="testimonial-text">{testimonial.text}</p>
-            </div>
-          ))}
-        </div>
-        <div className="testimonials-cta">
-          <a href="https://forms.gle/7XLoKVx9DwiPKSqs5" target="_blank" rel="noopener noreferrer">
-            आपले अनुभव सामायिक करा →
-          </a>
-        </div>
-      </section>
 
-
-
-
-      <section className="stay-updated-section">
-        <div className="stay-updated-content">
+      <section className="cta-section">
+        <div className="cta-content">
           <h2 className="headline" style={{ marginBottom: '1rem' }}>
-            अपडेट रहा
+            चला, या प्रेरणेचा भाग बनूया
           </h2>
-          <p className="body" style={{ marginBottom: '2rem', opacity: 0.6 }}>
-            कार्यक्रमाच्या नवीनतम माहितीसाठी आणि पुरस्कार विजेत्यांच्या घोषणांसाठी सबस्क्राईब करा.
+          <p className="body" style={{ fontSize: '2rem', marginBottom: '2rem', opacity: 0.8 }}>
+            १५ नोव्हेंबर २०२५ <br /> रोजी एम. आय. टी. प्रांगण, <br />छत्रपती संभाजीनगर  
+            <br />आपली सहपरिवार उपस्थिती म्हणजे मराठा समाजाचे दिव्यदर्शन !
           </p>
-          <form className="email-form" onSubmit={handleEmailSubmit}>
-            <div className="email-input-wrapper">
-              <input
-                type="email"
-                placeholder="आपला ईमेल प्रविष्ट करा"
-                className="email-input"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              <button type="submit" className="submit-button">
-                सबस्क्राईब करा
-              </button>
-            </div>
-          </form>
+          <div className="cta-group" style={{marginTop: '1rem'}}>
+            <Link 
+              href="https://forms.gle/7XLoKVx9DwiPKSqs5" 
+              className="btn btn-primary" 
+              target="_blank"
+              style={{
+                borderRadius: '8px',
+                background: '#da8971',
+                padding: '0.875rem 1.75rem',
+                display: 'inline-block',
+                textDecoration: 'none',
+                color: '#000',
+                fontWeight: 500,
+                fontSize: '1.5rem',
+                transition: 'all 0.2s'
+              }}
+            >
+              Register Now
+            </Link>
+          </div>
         </div>
       </section>
 
