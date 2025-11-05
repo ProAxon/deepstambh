@@ -1,48 +1,54 @@
 import Image from 'next/image'
 
 const speakers = [
+  
+  
   {
-    name: 'Tejrao Bargal',
+    name: 'Mr. Padmakar Mule',
     title: 'VP of Design, Adobe',
     bio: 'Ex-Dropbox, Frame.io. Product design leader.',
-    image: '/Tejrao-Bargal.png',
+    image: '/Padmakar-Mule.png',
     badge: 'awardee',
   },
   {
-    name: 'Nakul Bhonsle',
-    title: 'VP of Design, Adobe',
-    bio: 'Ex-Dropbox, Frame.io. Product design leader.',
-    image: '/Nakul-Bhonsle.png',
-    badge: 'awardee',
-  },
-  {
-    name: 'Baiju Patil',
-    title: 'VP of Design, Adobe',
-    bio: 'Ex-Dropbox, Frame.io. Product design leader.',
-    image: '/Baiju-Patil.png',
-    badge: 'awardee',
-  },
-  {
-    name: 'CA Ashok Patil',
-    title: 'VP of Design, Adobe',
-    bio: 'Ex-Dropbox, Frame.io. Product design leader.',
-    image: '/CA-Ashok-Patil-Sir.png',
-    badge: 'awardee',
-  },
-  {
-    name: 'Dr Pravin Suryavanshi',
+    name: 'Dr. Pravin Suryavanshi',
     title: 'VP of Design, Adobe',
     bio: 'Ex-Dropbox, Frame.io. Product design leader.',
     image: '/Dr-Pravin–Suryavanshi.png',
     badge: 'awardee',
   },
   {
-    name: 'Padmakar Mule',
+    name: 'CA. Ashok Patil',
     title: 'VP of Design, Adobe',
     bio: 'Ex-Dropbox, Frame.io. Product design leader.',
-    image: '/Padmakar-Mule.png',
+    image: '/CA-Ashok-Patil-Sir.png',
     badge: 'awardee',
   },
+  {
+    name: 'Mr. Tejrao Bargal',
+    title: 'VP of Design, Adobe',
+    bio: 'Ex-Dropbox, Frame.io. Product design leader.',
+    image: '/Tejrao-Bargal.png',
+    badge: 'awardee',
+  },
+  {
+    name: 'Mr. Baiju(Vinod) Patil',
+    title: 'VP of Design, Adobe',
+    bio: 'Ex-Dropbox, Frame.io. Product design leader.',
+    image: '/Baiju-Patil.png',
+    badge: 'awardee',
+  },
+  {
+    name: 'Mr. Nakul Bhonsle',
+    title: 'VP of Design, Adobe',
+    bio: 'Ex-Dropbox, Frame.io. Product design leader.',
+    image: '/Nakul-Bhonsle.png',
+    badge: 'awardee',
+  },
+  
+  
+  
+  
 
 ]
 

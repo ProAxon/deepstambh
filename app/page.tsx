@@ -53,7 +53,6 @@ export default function Home() {
   const [email, setEmail] = useState('')
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null)
   const [showVideoModal, setShowVideoModal] = useState(false)
-  const videoRef = useRef<HTMLVideoElement>(null)
   const aboutSectionRef = useRef<HTMLElement>(null)
   const aboutText1Ref = useRef<HTMLParagraphElement>(null)
   const aboutText2Ref = useRef<HTMLParagraphElement>(null)
@@ -86,31 +85,13 @@ export default function Home() {
       }
     }
 
-    // Ensure video stays visible and plays
-    if (videoRef.current) {
-      const video = videoRef.current
-      video.style.display = 'block'
-      video.style.visibility = 'visible'
-      video.style.opacity = '1'
-      video.style.zIndex = '0'
-
-      // Force video to load
-      video.load()
-
-      const playPromise = video.play()
-      if (playPromise !== undefined) {
-        playPromise.catch(() => {
-          // Autoplay was prevented, but video should still be visible
-          console.log('Video autoplay prevented, but video should still be visible')
-        })
-      }
-
-      // Ensure video remains visible even if errors occur
-      video.addEventListener('error', () => {
-        console.error('Video error, but keeping element visible')
-        video.style.display = 'block'
-        video.style.visibility = 'visible'
-      })
+    // Ensure image stays visible
+    const heroImage = document.querySelector('.hero-image') as HTMLImageElement
+    if (heroImage) {
+      heroImage.style.display = 'block'
+      heroImage.style.visibility = 'visible'
+      heroImage.style.opacity = '1'
+      heroImage.style.zIndex = '0'
     }
 
   }, [])
@@ -230,55 +211,54 @@ export default function Home() {
     <div style={{ background: '#fff', minHeight: '100vh' }}>
       <Nav />
 
-      <section className="hero">
-        <video
-          ref={videoRef}
-          className="hero-video"
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/tdf%20hero-kWogeZADipb8UEioYkvTdTKES0zLOz.mp4"
-          onLoadedData={() => {
-            if (videoRef.current) {
-              videoRef.current.style.display = 'block'
-              videoRef.current.style.visibility = 'visible'
-              videoRef.current.style.opacity = '1'
-            }
-          }}
-          style={{
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            minWidth: '100%',
-            minHeight: '100%',
-            width: 'auto',
-            height: 'auto',
-            transform: 'translate(-50%, -50%)',
-            objectFit: 'cover',
-            zIndex: 0,
-            display: 'block',
-            visibility: 'visible',
-            opacity: 1
-          }}
-        >
-          Your browser does not support the video tag.
-        </video>
+      <section className="hero" style={{marginTop: '6rem'}}>
+        <picture>
+          <source media="(max-width: 500px)" srcSet="/mobile-banner.png" />
+          <img
+            className="hero-image"
+            src="/banner.png"
+            alt="Hero Banner"
+            onLoad={() => {
+              const img = document.querySelector('.hero-image') as HTMLImageElement
+              if (img) {
+                img.style.display = 'block'
+                img.style.visibility = 'visible'
+                img.style.opacity = '1'
+              }
+            }}
+            style={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              minWidth: '100%',
+              minHeight: '100%',
+              width: 'auto',
+              height: 'auto',
+              transform: 'translate(-50%, -50%)',
+              objectFit: 'cover',
+              zIndex: 0,
+              display: 'block',
+              visibility: 'visible',
+              opacity: 1
+            }}
+          />
+        </picture>
 
         <div className="hero-video-overlay"></div>
         <canvas className="dark-shader"></canvas>
         <div className="grid-bg"></div>
 
         <div className="hero-content">
-          <h1 className="display">दीपस्तंभ पुरस्कार सोहळा २०२५</h1>
+          <h2 className="display" style={{fontSize: '3rem'}}>दीपस्तंभ पुरस्कार सोहळा २०२५</h2>
           <p className="hero-subtitle">
             प्रेरणेचा सण • समाजातील कर्तृत्वाचा गौरव
+          </p> 
+          <p className="hero-date" style={{fontSize: '1.5rem'}}>
+            १५ नोव्हेंबर २०२५ 
+          <br />
+          एम. आय. टी. प्रांगण, बीड बायपास रोड <br /> छत्रपती संभाजीनगर
           </p>
-          <p className="hero-date">
-            १५ नोव्हेंबर २०२५ | एम. आय. टी. प्रांगण, बीड बायपास रोड, छत्रपती संभाजीनगर
-          </p>
-          <div className="cta-group">
+          <div className="cta-group" style={{marginTop: '1rem'}}>
             <Link href="https://forms.gle/7XLoKVx9DwiPKSqs5" className="btn btn-primary" target="_blank">
               Register Now
             </Link>
@@ -299,7 +279,7 @@ export default function Home() {
       </section> */}
 
       <section className="about-section" id="about" ref={aboutSectionRef}>
-        <div className="eyebrow">बद्दल</div>
+        <div className="eyebrow">कार्यक्रमाविषयी</div>
 
         <p className="large-body" ref={aboutText1Ref}>
           हा फक्त एक पुरस्कार सोहळा नाही.
@@ -310,7 +290,7 @@ export default function Home() {
 
         <p className="large-body" ref={aboutText2Ref}>
           <strong>दीपस्तंभ पुरस्कार सोहळा २०२५</strong> हा मराठा समाज प्रतिष्ठान, छत्रपती संभाजीनगर
-          यांचा प्रेरणादायी उपक्रम आहे — ज्यामध्ये समाजातील विविध क्षेत्रांत उल्लेखनीय कार्य
+          यांचा प्रेरणादायी उपक्रम आहे ज्यामध्ये समाजातील विविध क्षेत्रांत उल्लेखनीय कार्य
           करणाऱ्या व्यक्तींचा सन्मान केला जातो.
           इथे केवळ गौरव नव्हे, तर एकत्र येऊन एकमेकांकडून शिकण्याची आणि प्रेरणा घेण्याची संधी आहे.
         </p>
@@ -319,7 +299,7 @@ export default function Home() {
         <br />
 
         <p className="large-body" ref={aboutText3Ref}>
-          १५ नोव्हेंबर २०२५, एम. आय. टी. प्रांगण, छत्रपती संभाजीनगर —
+          १५ नोव्हेंबर २०२५, एम. आय. टी. प्रांगण, छत्रपती संभाजीनगर
           हजारो समाजबंधूंनी उजळवलेला कर्तृत्वाचा दीप.
           चला, या प्रेरणेचा भाग बनूया.
         </p>
@@ -488,37 +468,7 @@ export default function Home() {
 
       <Footer />
 
-      <a href="https://forms.gle/7XLoKVx9DwiPKSqs5" target="_blank" rel="noopener noreferrer" className="nvgt-badge">
-        <span className="badge-text">आयोजक</span>
-        <span className="badge-brand">मराठा समाज प्रतिष्ठान</span>
-      </a>
-
-      <button
-        className="video-trigger"
-        aria-label="प्रास्ताविक व्हिडिओ पहा"
-        onClick={() => setShowVideoModal(true)}
-      >
-        <div className="video-trigger-thumbnail" style={{ position: 'relative' }}>
-          <Image
-            className="video-trigger-preview"
-            src="/video-thumbnail.jpg"
-            alt="प्रास्ताविक व्हिडिओ"
-            fill
-            style={{ objectFit: 'cover' }}
-          />
-          <div className="video-trigger-play">
-            <svg className="play-icon" width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="40" cy="40" r="40" fill="white"></circle>
-              <path
-                d="M32 26C32 24.5 33.5 23.5 34.8 24.2L56.3 36.2C57.6 36.9 57.6 38.9 56.3 39.6L34.8 51.6C33.5 52.3 32 51.3 32 49.8V26Z"
-                fill="black"
-                strokeLinejoin="round"
-                strokeLinecap="round"
-              ></path>
-            </svg>
-          </div>
-        </div>
-      </button>
+      
 
       {showVideoModal && (
         <div className="video-modal-overlay" onClick={() => setShowVideoModal(false)}>
