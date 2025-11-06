@@ -1,55 +1,48 @@
 import Image from 'next/image'
 
 const speakers = [
-  
-  
   {
-    name: 'Mr. Padmakar Mule',
-    title: 'VP of Design, Adobe',
-    bio: 'Ex-Dropbox, Frame.io. Product design leader.',
+    name: 'श्री. पद्माकरराव मुळे',
+    title: 'प्रख्यात उद्योगपती',
+    bio: '',
     image: '/Padmakar-Mule.png',
     badge: 'awardee',
   },
   {
-    name: 'Dr. Pravin Suryavanshi',
-    title: 'VP of Design, Adobe',
-    bio: 'Ex-Dropbox, Frame.io. Product design leader.',
+    name: 'श्री. डॉ. प्रवीण सूर्यवंशी',
+    title: 'अध्यक्ष, ऑल इंडिया सर्जन असोसिएशन',
+    bio: '',
     image: '/Dr-Pravin–Suryavanshi.png',
     badge: 'awardee',
   },
   {
-    name: 'CA. Ashok Patil',
-    title: 'VP of Design, Adobe',
-    bio: 'Ex-Dropbox, Frame.io. Product design leader.',
+    name: 'सी. ए. अशोक पाटील',
+    title: 'सुप्रसिद्ध व अग्रगण्य चार्टर्ड अकाउंटंट',
+    bio: '',
     image: '/CA-Ashok-Patil-Sir.png',
     badge: 'awardee',
   },
   {
-    name: 'Mr. Tejrao Bargal',
-    title: 'VP of Design, Adobe',
-    bio: 'Ex-Dropbox, Frame.io. Product design leader.',
+    name: 'श्री. तेजराव बारगळ',
+    title: 'यशस्वी शेतकरी, कृषी व्यावसायिक',
+    bio: '',
     image: '/Tejrao-Bargal.png',
     badge: 'awardee',
   },
   {
-    name: 'Mr. Baiju(Vinod) Patil',
-    title: 'VP of Design, Adobe',
-    bio: 'Ex-Dropbox, Frame.io. Product design leader.',
+    name: 'श्री. बैजु पाटील',
+    title: 'निष्णांत वाइल्डलाईफ फोटोग्राफर',
+    bio: '',
     image: '/Baiju-Patil.png',
     badge: 'awardee',
   },
   {
-    name: 'Mr. Nakul Bhonsle',
-    title: 'VP of Design, Adobe',
-    bio: 'Ex-Dropbox, Frame.io. Product design leader.',
+    name: 'श्री. नकुल भोसले',
+    title: 'क्राफ्ट बिअर उद्योजक',
+    bio: '',
     image: '/Nakul-Bhonsle.png',
     badge: 'awardee',
   },
-  
-  
-  
-  
-
 ]
 
 export default function SpeakersSection() {
@@ -75,7 +68,7 @@ export default function SpeakersSection() {
               {speaker.badge && <span className="speaker-badge">पुरस्कार विजेता</span>}
               <h3 className="speaker-name">{speaker.name}</h3>
               <p className="speaker-title">{speaker.title}</p>
-              <p className="speaker-bio">{speaker.bio}</p>
+              {speaker.bio && <p className="speaker-bio">{speaker.bio}</p>}
             </div>
           </div>
         ))}

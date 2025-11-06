@@ -3,33 +3,34 @@ import './globals.css'
 import Script from 'next/script'
 
 export const metadata: Metadata = {
-  title: 'Tokyo Design Forum 2026',
-  description: 'Where human creativity meets intelligent systems. Tokyo. February 2026.',
+  title: 'दीपस्तंभ पुरस्कार सोहळा | मराठा समाज प्रतिष्ठान',
+  description: 'मराठा समाज प्रतिष्ठान, छत्रपती संभाजीनगर यांचा दीपस्तंभ पुरस्कार सोहळा २०२५. १५ नोव्हेंबर २०२५ रोजी एम. आय. टी. प्रांगण, छत्रपती संभाजीनगर येथे.',
   generator: 'Next.js',
   openGraph: {
-    title: 'Tokyo Design Forum 2026',
-    description: 'Where human creativity meets intelligent systems. Tokyo. February 2026.',
-    url: 'https://tokyodesignforum.com',
-    siteName: 'Tokyo Design Forum',
-    locale: 'en_US',
+    title: 'दीपस्तंभ पुरस्कार सोहळा २०२५',
+    description: 'मराठा समाज प्रतिष्ठान, छत्रपती संभाजीनगर यांचा दीपस्तंभ पुरस्कार सोहळा २०२५. १५ नोव्हेंबर २०२५ रोजी एम. आय. टी. प्रांगण, छत्रपती संभाजीनगर येथे.',
+    url: 'https://deepstambh.com',
+    siteName: 'दीपस्तंभ पुरस्कार सोहळा',
+    locale: 'mr_IN',
     images: [
       {
-        url: 'https://www.tokyodesignforum.com/og-image.jpg',
+        url: '/logo.png',
         width: 1200,
         height: 630,
-        alt: 'Tokyo Design Forum - A Design & Product Conference',
+        alt: 'दीपस्तंभ पुरस्कार सोहळा २०२५ - मराठा समाज प्रतिष्ठान',
       },
     ],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Tokyo Design Forum 2026',
-    description: 'Where human creativity meets intelligent systems. Tokyo. February 2026.',
-    images: ['https://www.tokyodesignforum.com/og-image.jpg'],
+    title: 'दीपस्तंभ पुरस्कार सोहळा २०२५',
+    description: 'मराठा समाज प्रतिष्ठान, छत्रपती संभाजीनगर यांचा दीपस्तंभ पुरस्कार सोहळा २०२५. १५ नोव्हेंबर २०२५ रोजी एम. आय. टी. प्रांगण, छत्रपती संभाजीनगर येथे.',
+    images: ['/logo.png'],
   },
   icons: {
-    icon: '/logo.svg',
+    icon: '/logo.png',
+    apple: '/logo.png',
   },
 }
 
@@ -39,7 +40,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="mr">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
