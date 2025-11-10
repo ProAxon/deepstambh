@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'दीपस्तंभ पुरस्कार सोहळा २०२५',
     description: 'मराठा समाज प्रतिष्ठान, छत्रपती संभाजीनगर यांचा दीपस्तंभ पुरस्कार सोहळा २०२५. १५ नोव्हेंबर २०२५ रोजी एम. आय. टी. प्रांगण, छत्रपती संभाजीनगर येथे.',
-    url: 'https://deepstambh.com',
+    url: 'https://deepstambh.marathasamajpratishthan.org',
     siteName: 'दीपस्तंभ पुरस्कार सोहळा',
     locale: 'mr_IN',
     images: [

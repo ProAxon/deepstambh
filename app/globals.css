@@ -5370,13 +5370,15 @@ html {
 }
 
 .hero {
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  overflow: hidden;
-  z-index: 0
+  overflow: visible;
+  z-index: 0;
+  padding: 2rem 0;
 }
 
 .hero-video {
@@ -5428,7 +5430,8 @@ html {
   position: relative;
   z-index: 10;
   max-width: 1000px;
-  padding: 0 2rem
+  padding: 2rem;
+  margin: auto;
 }
 
 .hero-subtitle {
@@ -5468,10 +5471,29 @@ html {
   margin-top: 3rem
 }
 
+@media (max-width:768px) {
+  .hero {
+    padding-bottom: 3rem;
+  }
+  
+  .hero-content {
+    padding-bottom: 1.5rem;
+  }
+  
+  .cta-group {
+    margin-bottom: 1rem;
+  }
+}
+
 @media (max-width:640px) {
+  .hero {
+    padding-bottom: 3rem;
+  }
+  
   .cta-group {
     flex-direction: column;
-    width: 100%
+    width: 100%;
+    margin-bottom: 1rem;
   }
 
   .cta-group .btn {
@@ -7698,8 +7720,14 @@ footer {
 }
 
 @media (max-width: 500px) {
+  .hero {
+    min-height: auto;
+    padding-bottom: 4rem;
+  }
+  
   .hero-content {
     margin-top: 33rem;
+    padding-bottom: 2rem;
   }
   
   .hero-content .display {
@@ -7716,6 +7744,7 @@ footer {
   
   .hero-content .cta-group {
     margin-top: 0.5rem !important;
+    margin-bottom: 1rem !important;
   }
   
   .hero-content .btn-primary,
